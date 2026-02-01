@@ -15,30 +15,30 @@
 export const enableProfiling = false;
 
 /**
- * The amount of time (in milliseconds) that the scheduler should yield
- * to the main thread before continuing work. This controls the frame interval
- * for cooperative scheduling.
+ * The time slice in milliseconds for which the scheduler will work before
+ * yielding to the main thread. This controls the frame interval for
+ * cooperative scheduling.
  */
 export const frameYieldMs = 5;
 
 /**
- * The timeout (in milliseconds) for user-blocking priority tasks.
- * Tasks with this priority will be executed as soon as possible,
- * but will be interrupted if they take longer than this timeout.
+ * The expiration timeout (in milliseconds) for user-blocking priority tasks.
+ * This value is added to the task's start time to compute its expiration.
+ * Expired tasks are treated as urgent and scheduled to run immediately.
  */
 export const userBlockingPriorityTimeout = 250;
 
 /**
- * The timeout (in milliseconds) for normal priority tasks.
- * Tasks with this priority will be executed after user-blocking tasks,
- * but will be interrupted if they take longer than this timeout.
+ * The expiration timeout (in milliseconds) for normal priority tasks.
+ * This value is added to the task's start time to compute its expiration.
+ * Expired tasks are treated as urgent and scheduled to run immediately.
  */
 export const normalPriorityTimeout = 5000;
 
 /**
- * The timeout (in milliseconds) for low priority tasks.
- * Tasks with this priority will be executed after normal priority tasks,
- * but will be interrupted if they take longer than this timeout.
+ * The expiration timeout (in milliseconds) for low priority tasks.
+ * This value is added to the task's start time to compute its expiration.
+ * Expired tasks are treated as urgent and scheduled to run immediately.
  */
 export const lowPriorityTimeout = 10000;
 
